@@ -1,6 +1,14 @@
+"use strict";
 const {GenericError} = require('./errors')
 
-// Handle errors thrown in a clean standardised way
+/**
+ * Handles errors in a clean and standardised manner
+ * @param err
+ * @param req
+ * @param res
+ * @param next
+ * @returns {*}
+ */
 const handleErrors = (err, req, res, next) => {
     let errorCode = 500
 

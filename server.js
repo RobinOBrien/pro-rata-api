@@ -36,11 +36,11 @@ app.listen(port, async () => {
     app.use(errorHandler)
 })
 
-console.log(`Allocation proration tool API started on port ${port}`)
+console.log(`Pro rata API started on port ${port}`)
 
 // Gracefully shut down.
 function shutDown() {
-    console.log('\nShutting down calculator!')
+    console.log('\nShutting down Pro rata API!')
     process.exit(0)
 }
 

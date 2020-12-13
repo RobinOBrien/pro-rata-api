@@ -1,3 +1,5 @@
+"use strict";
+
 class GenericError extends Error {
     constructor(message) {
         super();
