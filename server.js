@@ -3,7 +3,7 @@ const bodyParser = require('body-parser')
 const errorHandler = require('./api/utils/handleErrors')
 
 const app = express()
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3001
 
 const routes = require('./api/routes/routes')
 
