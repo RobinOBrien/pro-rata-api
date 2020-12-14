@@ -1,12 +1,14 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const errorHandler = require('./api/utils/handleErrors')
+const cors = require('cors');
 
 const app = express()
 const port = process.env.PORT || 3001
 
 const routes = require('./api/routes/routes')
 
+app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
