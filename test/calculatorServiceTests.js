@@ -92,6 +92,48 @@ describe('Calculator Service Tests', function () {
                     "Investor A": 100,
                     "Investor B": 25
                 }
+            },
+            {
+                args: {
+                    allocation: 100, investors: [
+                        {
+                            "name": "Investor A",
+                            "requested_amount": 100,
+                            "average_amount": 100
+                        },
+                        {
+                            "name": "Investor B",
+                            "requested_amount": 100,
+                            "average_amount": 100
+                        }]
+                }, expected: {
+                    "Investor A": 50,
+                    "Investor B": 50
+                }
+            },
+            {
+                args: {
+                    allocation: 100, investors: [
+                        {
+                            "name": "Investor A",
+                            "requested_amount": 100,
+                            "average_amount": 100
+                        },
+                        {
+                            "name": "Investor B",
+                            "requested_amount": 100,
+                            "average_amount": 100
+                        },
+                        {
+                            "name": "Investor C",
+                            "requested_amount": 100,
+                            "average_amount": 100
+                        }]
+                }, expected: {
+                    "Investor A": 33.33333,
+                    "Investor B": 33.33333,
+                    "Investor C": 33.33333
+                }
             }
         ]
 
@@ -100,7 +142,7 @@ describe('Calculator Service Tests', function () {
                 let allocationRequest = new AllocationRequest(test.args.allocation, test.args.investors)
                 let rawResult = calculator.calculateAllocation(allocationRequest)
                 let formattedResults = calculator.formatResultsForDisplay(rawResult)
-                assert.depEqual(formattedResults, test.expected);
+                assert.deepEqual(formattedResults, test.expected);
             })
         })
     });

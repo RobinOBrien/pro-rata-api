@@ -30,7 +30,7 @@ npm install
 node server.js
 ```
 
-The server should now be running. The standard port is `3000`
+The server should now be running. The standard port is `3001`
 
 ## Using the API
 
@@ -86,7 +86,7 @@ docker build -t pro-rata-api .
 Start the container
 
 ```
-docker run -p 3000:3000 -d pro-rata-api
+docker run -p 3001:3001 -d pro-rata-api
 ```
 
-The API server will now be accessible through port `3000` unless explicitly change.
+The API server will now be accessible through port `3001` unless explicitly change.

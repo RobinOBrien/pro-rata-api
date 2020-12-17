@@ -53,7 +53,7 @@ function distribute(amount, investors, round) {
      *     If there is no more value to allocate, return. Otherwise, distribute remaining amount to
      *     investors who have not reached their requested amount
      */
-    if (unallocatedAmount.compareTo(new bigDecimal(0)) === 0) {
+    if (unallocatedAmount.round(5, 3).compareTo(new bigDecimal(0)) === 0) {
         return investors
     } else {
         return fulfilledInvestors.concat(distribute(unallocatedAmount, unfulfilledInvestors, ++round))
